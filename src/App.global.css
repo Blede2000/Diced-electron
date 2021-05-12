@@ -1,0 +1,283 @@
+/*
+ * @NOTE: Prepend a `~` to css file paths that are in your node_modules
+ *        See https://github.com/webpack-contrib/sass-loader#imports
+ */
+@import url('https://fonts.googleapis.com/css2?family=Rubik:ital,wght@0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap');
+:root {
+  --background: #292c2a;
+  --gray-lightest: #6a6a6a;
+  --gray-lighter: #434544;
+  --gray-light: #343735;
+  --gray-dark: #2f2f2f;
+  --gray-darker: #1e1e1e;
+  --highlight-base: #18f1c9;
+}
+* {
+  box-sizing: border-box;
+}
+html {
+  font-family: 'Rubik', sans-serif;
+}
+body {
+  background-color: var(--background);
+  color: white;
+}
+main {
+  padding: 16px;
+}
+section {
+  margin: 3rem 0;
+}
+h1,
+h2,
+h3,
+h4,
+h5,
+h5,
+p {
+  margin: 0;
+}
+section h1 {
+  text-transform: uppercase;
+  font-size: 2.5rem;
+  margin: 0;
+  margin-bottom: 0.8rem;
+}
+section:nth-child(1) {
+  margin-top: 0px;
+}
+
+.characterInfo {
+  display: flex;
+}
+.combatInfo {
+  background-color: var(--gray-light);
+  display: grid;
+  grid-template-columns: repeat(4, minmax(0, 1fr));
+  gap: 10px;
+  padding: 10px;
+  justify-content: space-between;
+  border-radius: 5px;
+}
+.combatItem {
+  width: 100%;
+  background-color: var(--gray-dark);
+  padding: 14px 7px;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  align-items: center;
+  text-align: center;
+  border-radius: 5px;
+}
+.combatItem h2 {
+  font-size: 1rem;
+  margin: 0;
+  text-transform: uppercase;
+  font-weight: 500;
+}
+.combatItem h3 {
+  font-size: 1rem;
+  margin: 0;
+  margin-top: 1rem;
+  text-transform: uppercase;
+  font-weight: 500;
+}
+.combatItem p {
+  margin: 0;
+  color: var(--highlight-base);
+  font-weight: 600;
+  font-size: clamp(1rem, -0.875rem + 8.333vw, 3.5rem);
+}
+.combatItem:not(:first-child) p {
+  font-size: clamp(5rem, -0.975rem + 8.333vw, 6.5rem);
+}
+.abilitiesInfo .container {
+  display: grid;
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+  grid-template-rows: 1fr 1fr;
+  gap: 20px;
+  row-gap: 50px;
+}
+.abilityItem {
+  position: relative;
+}
+.abilityItem .abilityScore {
+  background-color: var(--gray-light);
+  padding: 7px;
+  padding-top: 14px;
+  text-align: center;
+  border-radius: 5px;
+  min-height: 9rem;
+}
+.abilityScore h2 {
+  font-size: clamp(0.4rem, -0.675rem + 8.333vw, 1.2rem);
+  text-transform: uppercase;
+  font-weight: 500;
+  letter-spacing: 1px;
+  color: var(--highlight-base);
+}
+.abilityScore p {
+  font-size: 4rem;
+  font-weight: 700;
+}
+.abilityScore h2,
+.abilityScore p {
+  margin: 0;
+}
+.abilityItem .abilityModifier {
+  position: absolute;
+  border-radius: 5px;
+  background-color: var(--gray-darker);
+  left: 50%;
+  transform: translateX(-50%);
+  top: 85%;
+  width: 4rem;
+  text-align: center;
+  padding: 10px;
+}
+.abilityModifier p {
+  margin: 0;
+}
+.skillInfo .container {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 10px;
+}
+.skillItem {
+  background-color: var(--gray-light);
+  padding: 8px 10px;
+  border-radius: 5px;
+  display: flex;
+  justify-content: space-between;
+  width: 100%;
+  align-items: center;
+}
+.skillItem h4,
+.skillItem p {
+  margin: 0;
+}
+.skillItem .left p {
+  color: var(--highlight-base);
+}
+.moneyInfo {
+  display: grid;
+  grid-template-columns: repeat(5, minmax(0, 1fr));
+  grid-template-rows: 1fr;
+  gap: 10px;
+}
+.moneyItem {
+  background-color: var(--gray-light);
+  border-radius: 5px;
+  padding: 12px;
+  text-align: center;
+}
+.moneyItem h2 {
+  color: var(--highlight-base);
+  font-weight: 400;
+  font-size: clamp(0.4rem, -0.675rem + 8.333vw, 1.2rem);
+  margin-bottom: 0.5rem;
+}
+.moneyItem p {
+  font-weight: 600;
+  font-size: clamp(1rem, -0.675rem + 8.333vw, 2.5rem);
+}
+.equipmentList {
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+  margin: 8px 0;
+}
+
+.equipmentItem {
+  background-color: var(--gray-light);
+  display: flex;
+  align-items: center;
+  padding: 20px 10px;
+  border-radius: 5px;
+}
+.equipmentItem .qty {
+  margin-left: auto;
+  display: flex;
+  gap: 5px;
+}
+.equipmentItem .qty input {
+  background-color: var(--gray-darker);
+  height: 30px;
+  border-radius: 5px;
+  font-size: 1.2rem;
+  width: 60px;
+  border: none;
+  color: white;
+  text-align: center;
+}
+.equipmentItem button {
+  background-color: transparent;
+  margin-left: 1rem;
+  border: none;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+.equipmentItem .qty button {
+  height: 30px;
+  width: 30px;
+  border-radius: 5px;
+  margin: 0;
+  border: none;
+  background-color: var(--highlight-base);
+}
+.addItem {
+  background-color: var(--gray-light);
+  color: var(--gray-lightest);
+  border: none;
+  padding: 20px 10px;
+  text-align: center;
+  font-size: 1rem;
+  font-weight: 600;
+  width: 100%;
+  border-radius: 5px;
+  cursor: pointer;
+}
+.addItem:hover {
+  background-color: var(--gray-lightest);
+  color: var(--gray-lighter);
+}
+
+.spellWeaponList {
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+  margin: 8px 0;
+}
+.spellWeaponItem {
+  background-color: var(--gray-light);
+  display: flex;
+  border-radius: 5px;
+}
+.spellWeaponItem .title {
+  padding: 20px 10px;
+  display: flex;
+  align-items: center;
+  gap: 10px;
+}
+.spellWeaponItem .title h2 {
+  font-weight: 500;
+}
+.spellWeaponItem .title span {
+  background-color: var(--highlight-base);
+  padding: 5px 7px;
+  text-transform: uppercase;
+  color: var(--gray-darker);
+  border-radius: 5px;
+  font-weight: 500;
+}
+.spellWeaponItem .dice {
+  margin-left: auto;
+  padding: 20px 30px;
+  border-radius: 5px;
+  background-color: var(--gray-lighter);
+  display: flex;
+  align-items: center;
+  font-size: 1.5rem;
+}
