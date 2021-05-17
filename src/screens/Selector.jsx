@@ -1,5 +1,6 @@
 import React from "react";
 import { useSelector, useDispatch } from "react-redux";
+import { Link } from "react-router-dom";
 import { addCharacter } from "../redux/index";
 
 const Selector = () => {
@@ -28,9 +29,9 @@ const Selector = () => {
 
             {characterIds.map((item) => {
                 return (
-                    <button type="submit" key={item}>
+                    <Link to={"/character/" + item} key={item}>
                         {characterList[item].characterName}
-                    </button>
+                    </Link>
                 );
             })}
         </div>

@@ -6,7 +6,8 @@ import Skills from "../components/sheet/Skills.jsx";
 import Spells from "../components/sheet/Spells.jsx";
 import Weapons from "../components/sheet/Weapons.jsx";
 
-const Sheet = () => {
+const Sheet = (props) => {
+    console.log(props);
     return (
         <main>
             <Combat />
