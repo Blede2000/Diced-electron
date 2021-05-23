@@ -12,6 +12,7 @@
     --gray-dark: #2f2f2f;
     --gray-darker: #1e1e1e;
     --highlight-base: #18f1c9;
+    --input-background: #4a4b4b;
 }
 * {
     box-sizing: border-box;
@@ -371,8 +372,9 @@ section:nth-child(1) {
     justify-content: center;
 }
 .homeScreen .characterContainer {
-    display: grid;
-    grid-template-columns: repeat(6, minmax(0, 1fr));
+    display: flex;
+    gap: 10px;
+    flex-wrap: wrap;
 }
 .homeScreen .characterItem {
     background-color: var(--gray-light);
@@ -385,4 +387,73 @@ section:nth-child(1) {
     justify-content: center;
     color: white;
     text-decoration: none;
+}
+
+.registerScreen {
+    background-color: var(--gray-darker);
+    height: 100vh;
+    width: 100vw;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin-bottom: 0;
+}
+.registerScreen .loginBox {
+    width: 400px;
+    border-radius: 5px;
+    background-color: var(--background);
+    padding: 30px;
+    display: flex;
+    flex-direction: column;
+}
+
+.registerScreen .loginBox svg {
+    margin-bottom: 3rem;
+}
+
+.registerScreen .loginBox h1 {
+    font-weight: 800;
+}
+
+.formGroup {
+    position: relative;
+    width: 100%;
+    margin: 1rem 0;
+}
+.formGroup label {
+    position: absolute;
+    font-weight: 500;
+    color: #cecece;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+    font-size: 0.6rem;
+    padding: 10px;
+    font-family: "Rubik", sans-serif;
+}
+.formGroup input {
+    border-radius: 5px;
+    font-size: 1rem;
+    width: 100%;
+    background-color: var(--input-background);
+    border: none;
+    padding: 10px;
+    padding-top: calc(10px + 1.2rem);
+    font-family: "Rubik", sans-serif;
+    color: white;
+}
+.formGroup input:focus {
+    outline: none;
+    border: var(--highlight-base) 2 px solid;
+}
+.loginBox button[type="submit"] {
+    margin-top: 7rem;
+    background-color: var(--highlight-base);
+    font-family: "Rubik", sans-serif;
+    border: none;
+    padding: 14px;
+    font-weight: 600;
+    text-transform: uppercase;
+    width: 100%;
+    font-size: 1.1rem;
+    border-radius: 5px;
 }
